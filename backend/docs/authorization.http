@@ -1,0 +1,13 @@
+### get Auth
+#Dev
+#POST https://zope.psyergo.uni-wuerzburg.de/api/collections/users/auth-with-password
+#Local
+POST http://{{host}}/api/collections/users/auth-with-password
+Content-Type: application/json
+
+{
+  "identity": "",
+  "password": ""
+}
+
+> {% client.global.set("auth", response.body.token); %}

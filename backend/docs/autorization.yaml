@@ -1,0 +1,69 @@
+openapi: 3.0.3
+info:
+  title: Authorization
+  description: Authorization
+  version: 1.0.0
+servers:
+  - url: 'https://zope.psyergo.uni-wuerzburg.de'
+paths:
+  /api/collections/users/auth-with-password:
+    post:
+      summary: returns an authorization token for future requests, that require authorization
+      requestBody:
+        description: username and password of the user
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                identity:
+                  type: string
+                  example: 'test'
+                password:
+                  type: string
+                  example: '12345678'
+      responses:
+        '200':
+          description: successfully retrieved auth token
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  record:
+                    type: object
+                    example: {
+                      "collectionId": "os4hh5nubgvme93",
+                      "collectionName": "users",
+                      "created": "2023-01-03 17:25:31.990Z",
+                      "email": "test@mail.com",
+                      "emailVisibility": false,
+                      "id": "0hqpn5tykwupxv7",
+                      "updated": "2023-01-03 17:25:31.990Z",
+                      "username": "test",
+                      "verified": true
+                    }
+                  token:
+                    type: string
+                    example: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2xsZWN0aW9uSWQiOiJvczRoaDVudWJndm1lOTMiLCJleHAiOjE2NzU2MzIxMDMsImlkIjoiMGhxcG41dHlrd3VweHY3IiwidHlwZSI6ImF1dGhSZWNvcmQifQ.Tk4JQ7S_Aoh7QCwzhK1mRiCerCQpbpuQyzzretqIBvw'
+        '400':
+          description: did not retrieve auth token
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    description: HTTP status code
+                    example: 400
+                  message:
+                    type: string
+                    example: "Failed to authenticate"
+                  data:
+                    type: object
+                    example: {}
+
+
+

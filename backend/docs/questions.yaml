@@ -1,0 +1,54 @@
+openapi: 3.0.3
+info:
+  title: Questions
+  description: Get an object with the nfc ids as keys and the questions as value
+  version: 1.0.0
+servers:
+  - url: 'https://zope.psyergo.uni-wuerzburg.de'
+paths:
+  /api/questions:
+    get:
+      summary: returns an object with the nfc ids as keys and the questions as value
+      parameters:
+        - in: header
+          name: Authorization
+          schema:
+            type: string
+            format: bearer
+            bearerFormat: JWT
+
+      responses:
+        '200':
+          description: An object with the nfc ids as keys and the questions as value
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  "123456":
+                    type: object
+                    example: {
+                      "id": "q2rntor0kkf1vp9",
+                      "created": "2023-01-03 16:59:37.307Z",
+                      "updated": "2023-01-03 17:08:35.402Z",
+                      "Text": "test",
+                      "category": "reflection",
+                      "Active": false
+                    }
+        '401':
+          description: No Authorization header send
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "The request requires valid record authorization token to be set."
+                  data:
+                    type: object
+                    description: empty object
+                    example: {}
+
+
+

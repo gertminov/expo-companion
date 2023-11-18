@@ -1,0 +1,245 @@
+[
+  {
+    "id": "483ip0nznhc45oy",
+    "name": "teacher",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "vva4fyke",
+        "name": "email",
+        "type": "email",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "exceptDomains": null,
+          "onlyDomains": null
+        }
+      }
+    ],
+    "listRule": null,
+    "viewRule": null,
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "zx4mtg0oa5kw6zy",
+    "name": "question",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "l4hjdpic",
+        "name": "text",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "dmanywbb",
+        "name": "active",
+        "type": "bool",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {}
+      },
+      {
+        "id": "lhyf2frn",
+        "name": "category",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "maxSelect": 1,
+          "collectionId": "k8d3wzqpwzbsm3e",
+          "cascadeDelete": false
+        }
+      }
+    ],
+    "listRule": null,
+    "viewRule": null,
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "3fkd4ztgz6p61gx",
+    "name": "sessionQuestion",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "gjnaxl7s",
+        "name": "questionId",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "maxSelect": 1,
+          "collectionId": "zx4mtg0oa5kw6zy",
+          "cascadeDelete": false
+        }
+      },
+      {
+        "id": "vnkbuwqt",
+        "name": "questionText",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "cfb1hhdi",
+        "name": "answer",
+        "type": "file",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "maxSelect": 1,
+          "maxSize": 5242880,
+          "mimeTypes": [],
+          "thumbs": []
+        }
+      },
+      {
+        "id": "5s6g2d22",
+        "name": "teacherId",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "maxSelect": 1,
+          "collectionId": "483ip0nznhc45oy",
+          "cascadeDelete": false
+        }
+      },
+      {
+        "id": "tlqushxw",
+        "name": "leafId",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "maxSelect": 1,
+          "collectionId": "4vd0s70sqvxj08c",
+          "cascadeDelete": false
+        }
+      }
+    ],
+    "listRule": null,
+    "viewRule": null,
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "os4hh5nubgvme93",
+    "name": "users",
+    "type": "auth",
+    "system": false,
+    "schema": [],
+    "listRule": null,
+    "viewRule": null,
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {
+      "allowEmailAuth": true,
+      "allowOAuth2Auth": true,
+      "allowUsernameAuth": true,
+      "exceptEmailDomains": null,
+      "manageRule": null,
+      "minPasswordLength": 8,
+      "onlyEmailDomains": null,
+      "requireEmail": false
+    }
+  },
+  {
+    "id": "4vd0s70sqvxj08c",
+    "name": "leaf",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "vlwhjoyi",
+        "name": "nfcId",
+        "type": "number",
+        "system": false,
+        "required": false,
+        "unique": true,
+        "options": {
+          "min": null,
+          "max": null
+        }
+      },
+      {
+        "id": "6quawrm4",
+        "name": "category",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "maxSelect": 1,
+          "collectionId": "k8d3wzqpwzbsm3e",
+          "cascadeDelete": false
+        }
+      }
+    ],
+    "listRule": null,
+    "viewRule": null,
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "k8d3wzqpwzbsm3e",
+    "name": "category",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "do5n9uxh",
+        "name": "name",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": true,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      }
+    ],
+    "listRule": null,
+    "viewRule": null,
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  }
+]

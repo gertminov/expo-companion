@@ -1,0 +1,8 @@
+// you can run these requests with Jetbrains IDEs
+// the urls point to the localhost for now, because the new build is not on the live server
+### Get Questions
+GET http://127.0.0.1:8090/api/questions
+//the token is an example you have to get one yourself from /api/collections/users/auth-with-password
+Authorization: {{auth}}
+
+

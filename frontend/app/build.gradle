@@ -1,0 +1,125 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.example.expo_companion"
+        minSdk 30
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_version
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+kotlin {
+    sourceSets.all {
+        languageSettings {
+            languageVersion = '1.7'
+            progressiveMode = true // false by default, enables errors on exhaustive-whens
+        }
+    }
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
+}
+
+
+dependencies {
+//    implementation 'com.google.android.material:material:<version>'
+    implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.0'
+    implementation 'androidx.activity:activity-compose:1.4.0'
+    implementation("com.google.dagger:hilt-android:2.44")
+    // NFC and Drawing Libs
+    implementation fileTree(dir: '.\\libs', include: ['*.aar', '*.jar'], exclude: [])
+    api project(':drawsurface')
+
+    // Make the errors go away
+    implementation 'com.github.ChickenHook:RestrictionBypass:2.2'
+
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation 'androidx.hilt:hilt-navigation-compose:1.0.0-rc01'
+    implementation "androidx.compose.material:material-icons-extended:$compose_version"
+
+    implementation "androidx.navigation:navigation-compose:2.4.0-rc01"
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation "androidx.compose.material:material:$compose_version"
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1"
+    implementation 'androidx.activity:activity-compose:1.3.1'
+    // Live Data
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
+    implementation "androidx.compose.runtime:runtime-livedata:$compose_version"
+
+
+    // used in RawInputManager. Its for the drawSurface. don't ask the crash is hourrendous
+    implementation group: 'io.reactivex.rxjava2', name: 'rxjava', version: '2.2.21'
+    implementation group: 'io.reactivex.rxjava2', name: 'rxandroid', version: '2.1.1'
+
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    //Moshi
+    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+    //Moshi
+    implementation "com.squareup.moshi:moshi:1.14.0"
+    //Moshi Kotlin
+    implementation "com.squareup.moshi:moshi-kotlin:1.14.0"
+    implementation 'androidx.navigation:navigation-common-ktx:2.5.3'
+    implementation "com.squareup.okhttp3:logging-interceptor:3.9.0"
+
+    //OkHttp Logging to look at outgoing network traffic
+    implementation("com.squareup.okhttp3:logging-interceptor:3.9.0")
+
+    // External NFC
+//    implementation 'no.entur.android.nfc:core:1.1.4'
+//    implementation 'no.entur.android.nfc:external-acs:1.1.4'
+    implementation 'androidx.preference:preference:1.2.0'
+    implementation "org.slf4j:slf4j-api:1.7.36"
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+}

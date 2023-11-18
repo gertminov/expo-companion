@@ -1,0 +1,3 @@
+configurations.maybeCreate("default")
+artifacts.add("default", file('onyxsdk-base-1.6.27.aar'))
+

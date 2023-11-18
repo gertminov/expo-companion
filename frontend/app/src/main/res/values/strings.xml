@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Expo-Companion</string>
+    <string name="button_next_with_delay">Next with delay</string>
+    <string name="button_next">Next</string>
+    <string name="button_increase_counter">Increase counter value</string>
+    <string name="button_up">Navigate up</string>
+    <string name="button_start">Open content pages</string>
+<!--    Contents-->
+    <string name="home_title">Willkommen zu Ihrem persönlichen Expo-Companion!</string>
+    <string name="home_sub_title">Ihrem digitalen Ausstellungsbegleiter</string>
+    <string name="home_welcome_text"><p>Der Expo-Companion soll Ihnen neue Perspektiven und Anregungen zu den Themen Religionsunterricht, Digitalisierung und Segen ermöglichen.\n\nAuch für uns ist Ihre Expertise außerordentlich wertvoll, um Ihre Interessen und Bedürfnisse als Lehrer:innen besser einschätzen zu können. Dadurch können die aktuelle Ausstellung verbessert und zukünftige Projekte passgenau für Ihre Arbeit entwickeln werden.
+        \n\nAm Ende können Sie all Ihre festgehaltenen Eindrücke und Erkenntnisse zum weiteren Reflektieren und Nacharbeiten mit nach Hause nehmen.\n\nDamit für Sie die Interaktion möglichst einfach ist, folgt nun eine Einführung in den Expo-Companion. Wenn Sie bereit sind, klicken Sie unten auf den Pfeil.</p></string>
+    <string name="welcome_title">Fragen pflücken und “enthüllen”</string>
+    <string name="welcome_text"><p>Während des Besuches der Ausstellung können Sie Fragen und Impulse entdecken.
+\n\nDafür gibt es unseren Baum, an dem Sie Fragen finden, die nur Sie als Lehrer:innen mit Hilfe dieses Tablets enthüllen können.
+\n\nWenn Sie ein Blatt vom Baum gepflückt haben, halten Sie es einfach an die Rückseite Ihres Tablets.
+Daraufhin wird ihnen eine Frage angezeigt.
+\n\nDie Ausstellung soll Ihnen Anregung geben und bei der Reflektion helfen. Dieser Companion bietet Ihnen die Möglichkeit, Ihre Antworten und Überlegungen schriftlich festzuhalten.
+\n\nFalls Probleme auftreten, wenden Sie sich gerne an eine:n der Ausstellungsbegleiter:innen.
+        Ansonsten klicken Sie auf den Pfeil.</p>
+</string>
+    <string name="tools_title">Bedienung - Werkzeugleiste</string>
+    <string name="tools_content">Um auf Ihrem Expo-Companion zu schreiben, können Sie <b>links</b> in der Werkzeugleiste den Stift oder Radiergummi auswählen.</string>
+    <string name="tools_content2">Das <b>Info - Symbol</b> darunter ermöglicht Ihnen auch später nochmal Infos zum Menü zu erhalten und zu dieser Anleitung zurück zu kehren.</string>
+    <string name="menu_title">Bedienung - Menüleiste</string>
+    <string name="menu_content">In der Menüleiste oben sammeln Sie Ihre Fragen. Es gibt <b>drei Kategorien</b> von Blättern. Pro Kategorie können Sie nur <b>eine Frage</b> beantworten.</string>
+    <string name="menu_content2">Hier können Sie <b>freie Notizen</b> verfassen und Ihre Gedanken und Eindrücke festhalten, die nicht auf eine der eingescannten Fragen bezogen sind.
+</string>
+    <string name="menu_content3">Wenn Sie auf <b>Beenden</b> drücken, können Sie den Expo-Companion <b>endgültig</b> verlassen.</string>
+    <string name="questions_title">Bedienung - Frage</string>
+    <string name="questions_content">Zum Beantworten der Fragen schreiben Sie einfach drauf los. Sie können oben in der Menüleiste <b>jederzeit zwischen den Fragen wechseln</b>. Ihre Antworten speichern automatisch oder sie klicken auf den “Speichern“ - Button.
+Gefällt Ihnen die enthüllte Frage nicht? Dann drücken Sie auf “Frage löschen”.
+Enthüllen Sie anschließend ein neues Blatt.</string>
+    <string name="questions_title2">“Verlorene” Fragen</string>
+    <string name="questions_content2">Zusätzlich sind in der Ausstellung noch “Verlorene” Blätter versteckt, die gesucht werden können. Auch diese Blätter können Sie enthüllen.</string>
+    <string name="introDone_title">Einführung geschafft!</string>
+    <string name="allDone_title">Fertig?</string>
+    <string name="allDone_content"><p>Wollen Sie das Bearbeiten all Ihrer Notizen wirklich final beenden?
+        \n\nDanach kann der gesamte Expo-Companion nicht weiter bearbeitet werden und wird final gespeichert.</p></string>
+    <string name="allDone2_content"><p>Möchten Sie Ihre Notizen zu Hause nochmal ansehen?\n\nDann geben Sie Ihre E-Mail Adresse in das Feld ein und drücken Sie auf “Abschicken”</p>.</string>
+    <string name="allDone2_title">Notizen per Mail erhalten</string>
+
+    <string name="allDone3_content">Vielen Dank für Ihre Expertise. Bitte geben Sie den Expo-Companion einem der Ausstellungsbegleiter:innen.</string>
+    <string name="allDone3_title">Fertig!</string>
+    <string name="deletePopup_header">Wollen Sie diese Frage und Ihren Antworttext löschen?</string>
+    <string name="exampleQuestionToChange">“Was hat Ihre Aufmerksamkeit besonders auf sich gezogen?”</string>
+    <string name="admin_panel_titel">Admin</string>
+    <string name="admin_panel_LeafList">Blätter ändern</string>
+    <string name="admin_neustarten">Starten</string>
+    <string name="admin_exchangeLeafHeader">Neues Blatt scannen</string>
+
+
+</resources>

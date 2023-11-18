@@ -1,0 +1,52 @@
+openapi: 3.0.3
+info:
+  title: generateEmail
+  description: generateEmail
+  version: 1.0.0
+servers:
+  - url: 'https://zope.psyergo.uni-wuerzburg.de'
+paths:
+  /api/sendmail:
+    post:
+      summary: generates an pdf with the questions and answers for the given teacher and send it per mail to the teacher
+
+      requestBody:
+        description: the database id and the email of the teacher, for which you want to generate the pdf
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  example: 1234567bi0gbt0m
+                email:
+                  type: string
+                  example: ein@lehrer.de
+
+      parameters:
+        - in: header
+          name: Authorization
+          schema:
+            type: string
+            format: bearer
+            bearerFormat: JWT
+
+      responses:
+        '200':
+          description: confirmation message
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: 'send email to teacher: 1234567bi0gbt0m'
+        '500':
+          description: something went wrong while generating the pdf or sending the email
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: 'Could not send email to teacher: 1234567bi0gbt0m'
+
+

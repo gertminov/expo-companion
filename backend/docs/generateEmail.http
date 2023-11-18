@@ -1,0 +1,22 @@
+### get Auth
+POST https://zope.psyergo.uni-wuerzburg.de/api/collections/users/auth-with-password
+Content-Type: application/json
+
+{
+  "identity": "testUser",
+  "password": "12345678"
+}
+
+> {% client.global.set("auth_token", response.body.json.token); %}
+
+
+### generate Email and send to teacher
+POST https://zope.psyergo.uni-wuerzburg.de/api/sendmail
+//the token is an example you have to get one yourself from /api/collections/users/auth-with-password
+Authorization: {{auth_token}}
+Content-Type: application/json
+
+{
+  "id": "pcb1vbqqtj4boft",
+  "email": "jacobheim@web.de"
+}
